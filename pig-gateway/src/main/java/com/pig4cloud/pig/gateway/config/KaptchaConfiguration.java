@@ -68,7 +68,8 @@ public class KaptchaConfiguration {
 	/**
 	 * 验证码文字大小
 	 */
-	private static final String DEFAULT_IMAGE_FONT_SIZE = "30";
+	private static final String DEFAULT_IMAGE_FONT_SIZE = "45";
+
 
 	@Bean
 	public DefaultKaptcha producer() {
@@ -80,11 +81,7 @@ public class KaptchaConfiguration {
 		properties.put(KAPTCHA_IMAGE_HEIGHT, DEFAULT_IMAGE_HEIGHT);
 		properties.put(KAPTCHA_IMAGE_FONT_SIZE, DEFAULT_IMAGE_FONT_SIZE);
 		properties.put(KAPTCHA_TEXTPRODUCER_CHAR_LENGTH, DEFAULT_IMAGE_LENGTH);
-		properties.put("kaptcha.textproducer.font.names", "Arial,Courier,宋体,楷体,微软雅黑");
-		/*properties.put("kaptcha.border", "no");
-		properties.put("kaptcha.textproducer.font.color", "black");
-
-		properties.put("kaptcha.textproducer.char.space", "5");*/
+		properties.put("kaptcha.textproducer.font.names", "Arial");
 		Config config = new Config(properties);
 		DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
 		defaultKaptcha.setConfig(config);
