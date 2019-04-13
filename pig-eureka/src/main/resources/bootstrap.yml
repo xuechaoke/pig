@@ -4,10 +4,10 @@ server:
 spring:
   security:
     user:
-      name: pig
-      password: pig
+      name: ciao
+      password: ciao
   application:
-    name: pig-eureka
+    name: ciao-eureka
   cloud:
     config:
       enabled: false
@@ -16,13 +16,13 @@ spring:
 # 类似的 redis 使用pig-redis ,gateway 换成 pig-gateway
 eureka:
   instance:
-    hostname: pig-eureka
+    hostname: localhost
     prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://pig:pig@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://ciao:ciao@${eureka.instance.hostname}:${server.port}/eureka/
   server:
     eviction-interval-timer-in-ms: 4000
     enable-self-preservation: false

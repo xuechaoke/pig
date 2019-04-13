@@ -5,8 +5,8 @@ spring:
         enabled: true
       routes:
         # 认证中心
-        - id: pig-auth
-          uri: lb://pig-auth
+        - id: ciao-auth
+          uri: lb://ciao-auth
           predicates:
             - Path=/auth/**
           filters:
@@ -15,8 +15,8 @@ spring:
             # 前端密码解密
             - PasswordDecoderFilter
         #UPMS 模块
-        - id: pig-upms
-          uri: lb://pig-upms
+        - id: ciao-upms
+          uri: lb://ciao-upms
           predicates:
             - Path=/admin/**
           filters:
@@ -32,8 +32,8 @@ spring:
                 name: default
                 fallbackUri: 'forward:/fallback'
         # 代码生成模块
-        - id: pig-codegen
-          uri: lb://pig-codegen
+        - id: ciao-codegen
+          uri: lb://ciao-codegen
           predicates:
             - Path=/gen/**
 

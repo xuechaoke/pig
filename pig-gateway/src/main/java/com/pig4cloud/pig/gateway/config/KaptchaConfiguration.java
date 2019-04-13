@@ -41,7 +41,7 @@ public class KaptchaConfiguration {
 	/**
 	 * 默认生成图形验证码宽度
 	 */
-	private static final String DEFAULT_IMAGE_WIDTH = "100";
+	private static final String DEFAULT_IMAGE_WIDTH = "120";
 
 	/**
 	 * 默认生成图像验证码高度
@@ -64,7 +64,7 @@ public class KaptchaConfiguration {
 	/**
 	 * 默认图片间隔
 	 */
-	private static final String DEFAULT_CHAR_SPACE = "5";
+	private static final String DEFAULT_CHAR_SPACE = "7";
 	/**
 	 * 验证码文字大小
 	 */
@@ -80,6 +80,11 @@ public class KaptchaConfiguration {
 		properties.put(KAPTCHA_IMAGE_HEIGHT, DEFAULT_IMAGE_HEIGHT);
 		properties.put(KAPTCHA_IMAGE_FONT_SIZE, DEFAULT_IMAGE_FONT_SIZE);
 		properties.put(KAPTCHA_TEXTPRODUCER_CHAR_LENGTH, DEFAULT_IMAGE_LENGTH);
+		properties.put("kaptcha.textproducer.font.names", "Arial,Courier,宋体,楷体,微软雅黑");
+		/*properties.put("kaptcha.border", "no");
+		properties.put("kaptcha.textproducer.font.color", "black");
+
+		properties.put("kaptcha.textproducer.char.space", "5");*/
 		Config config = new Config(properties);
 		DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
 		defaultKaptcha.setConfig(config);

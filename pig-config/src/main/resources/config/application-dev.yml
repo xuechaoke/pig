@@ -7,7 +7,7 @@ jasypt:
 spring:
   redis:
     password:
-    host: pig-redis
+    host: localhost
   # zipkin
   zipkin:
     enabled: true
@@ -82,4 +82,4 @@ security:
   oauth2:
     resource:
       loadBalanced: true
-      token-info-uri: http://pig-auth/oauth/check_token
+      token-info-uri: http://ciao-auth/oauth/check_token
