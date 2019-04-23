@@ -50,8 +50,13 @@ import java.util.Map;
 @AllArgsConstructor
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
+
 	private final DataSource dataSource;
+
 	private final UserDetailsService userDetailsService;
+	/**
+	 * 认证管理器
+	 */
 	private final AuthenticationManager authenticationManager;
 	private final RedisConnectionFactory redisConnectionFactory;
 

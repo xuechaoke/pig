@@ -55,12 +55,17 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	@SneakyThrows
 	protected void configure(HttpSecurity http) {
 		http
+			//允许基于使用HttpServletRequest限制访问
 			.authorizeRequests()
-			.antMatchers(
-				"/actuator/**",
-				"/token/**").permitAll()
+			//不用身份认证可以访问
+			.antMatchers("/actuator/**", "/token/**").permitAll()
+			//其它的请求要求必须有身份认证
 			.anyRequest().authenticated()
-			.and().csrf().disable();
+			.and()
+			//添加 CSRF 支持，使用WebSecurityConfigurerAdapter时，默认启用   防止CSRF（跨站请求伪造）配置
+			.csrf()
+			//关闭
+			.disable();
 	}
 
 	@Bean

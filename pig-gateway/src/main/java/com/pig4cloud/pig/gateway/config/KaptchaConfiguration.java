@@ -68,7 +68,7 @@ public class KaptchaConfiguration {
 	/**
 	 * 验证码文字大小
 	 */
-	private static final String DEFAULT_IMAGE_FONT_SIZE = "45";
+	private static final String DEFAULT_IMAGE_FONT_SIZE = "30";
 
 
 	@Bean
